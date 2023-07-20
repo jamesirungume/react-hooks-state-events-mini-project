@@ -10,7 +10,7 @@ console.log({ CATEGORIES, TASKS });
 
 function App() {
   const [addNewTask, setAddNewTask] = useState(TASKS);
-  const [currentCategory, setCurrentCategory] = useState("all"); // Add this state
+  const [currentCategory, setCurrentCategory] = useState("All"); // Use "All" instead of "all" to match the category value
 
   const onTaskFormSubmit = (newTaskData) => {
     setAddNewTask([...addNewTask, newTaskData]);
@@ -21,11 +21,11 @@ function App() {
       <h2>My tasks</h2>
       <CategoryFilter
         categories={CATEGORIES}
-        currentCategory={currentCategory} // Pass the currentCategory prop
-        setCurrentCategory={setCurrentCategory} // Pass the setCurrentCategory prop
+        currentCategory={currentCategory}
+        setCurrentCategory={setCurrentCategory}
       />
       <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={onTaskFormSubmit} />
-      <TaskList taskData={addNewTask} currentCategory={currentCategory} /> {/* Pass the currentCategory prop */}
+      <TaskList taskData={addNewTask} currentCategory={currentCategory} />
     </div>
   );
 }
